@@ -13,9 +13,7 @@ pages = int(TOTAL/COUNT)
 list = [i for i in range(TOTAL, -1, -COUNT)]
 
 pyclient = MongoClient()
-
 pyNewsDb = pyclient.NewsDb
-
 pyNewsCollection = pyNewsDb.NewsCollection
 
 session = HTMLSession()
@@ -79,5 +77,5 @@ for thers in list:
     if len(docs) > 0:
         pyNewsCollection.insert_one(docs)
     # return render_template('index.html', msg="5000 news fected successfully.")
-    print(f'{COUNT} news fected successfully. \n{len(docs)} news fected successfully.')
+    print(f'{COUNT}fected. \n{len(docs)} news updated successfully.')
     

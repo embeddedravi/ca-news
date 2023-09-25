@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+
+{% block response %}
+{% for question in questions %}
+    <div class="question my-4">
+        <div class="form-group my-2">
+            <p id="question" class="text-primary h5">{{question['question_statement']}}</p>
+        </div>
+        <div class="form-check text-success h6">
+            <input class="form-check-input radio-input" type="radio" name="answer" id="option1" value="{{question['answer']}}">
+            <label class="form-check-label" for="option1">
+                {{question['answer']}}
+            </label>
+        </div>
+        {% set count = 2 %}
+        {% for option in question['options'] %}
+        <div class="form-check text-secondary h6">
+            <input class="form-check-input radio-input" type="radio" name="answer" id="option{{count}}" value="{{option}}">
+            <label class="form-check-label" for="option{{count}}">
+                {{option}}
+            </label>
+        </div>
+        {% set count = count + 1 %}
+        {% endfor %}
+        <div class="m-3">
+            <b class="my-2">Explanation:</b>
+            <p>{{question['context']}}</p>
+        </div>
+    </div>
+
+{% endfor %}
+<div>
+    {{msg}}
+</div>
+<div>
+    <pre>{{results}}</pre>
+</div>
+{% endblock %}

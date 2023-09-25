@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block response %}
+
+    <div class="container">
+{% for news in newslist %}
+        <div class="row">
+            <div class="col-md-6">
+                <img src="data:image/jpeg;base64,{{news['image']['image']}}" alt="Image" class="image">
+            </div>
+            <div class="col-md-6 my-3">
+                <h4>{{news['title']}}</h4>
+                <p>{{news['intro']}}</p>
+                <!-- <p>{{news['summary']}}</p> -->
+                <!-- <p>{{news['rephrase']}}</p> -->
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">{{news['createdAt']}}</div>
+            <div class="col-md-6"></div>
+        </div>
+        <hr>
+        {% endfor %}
+    </div>
+
+<div>
+    {{msg}}
+</div>
+<div>
+    <pre>{{results}}</pre>
+</div>
+{% endblock %}

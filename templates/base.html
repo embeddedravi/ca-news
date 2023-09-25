@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuestGen</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+    <h1 class="text-center my-5">MCQ Generator</h1>
+    <div class="container">
+        {% block formdiv %}
+        {% endblock %}
+    </div>
+    <div class="container">
+        {% block response %}
+        {% endblock %}
+    </div>
+    <div class="footer mt-5">
+        <div style="text-align: center;"> © 2023 getans.com. All rights reserved.</div>
+    </div>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+</body>
+</html>

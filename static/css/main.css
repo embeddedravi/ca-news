@@ -1,0 +1,11 @@
+.radio-input {
+    border-width: 3px;
+}
+
+.image {
+            float: right;
+            max-width: 250px;    
+            min-width: 100px;        
+            height: auto;
+            margin: 1em;
+        }
